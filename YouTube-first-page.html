@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="YouTube-header.css">
     <link rel="stylesheet" href="YouTube-general.css">
     <link rel="stylesheet" href="YouTube-sidebar.css">
+    <link rel="stylesheet" href="YouTube-Fullsidebar.css">
     </style>
   </head>
   
   <body>
     <header class="header">
       <div class="left-section">
-        <img class="hamburger-menu" src="Icons/hamburger-menu.svg" alt="">
+        <div class="js-sidebar">
+          <img src="Icons/hamburger-menu.svg" alt="" class="hamburger-menu">
+        </div>
         <a href=" YouTube-first-page.html">
           <img src="Icons/youtube-logo.svg" alt="" class="youtube-logo">
         </a>
@@ -75,6 +78,33 @@
         <img src="Icons/library.svg" alt="">
         <div>Library</div>
       </div>
+    </nav>
+
+    <nav class="fullSidebar js-fullSidebar">
+      <div class="flexbox">
+        <img src="Icons/hamburger-menu.svg" alt="" class="hamburger-menu js-sidebar">
+        <a href=" YouTube-first-page.html">
+          <img src="Icons/youtube-logo.svg" alt="" class="youtube-logo">
+        </a>
+      </div>
+      <ul>
+        <li class="sidebar-link ">
+          <img src="Icons/home.svg" alt=""> 
+          <p>Home</p>
+        </li>
+        <li class="sidebar-link ">
+          <img src="Icons/icons8-youtube-shorts.svg" alt=""> 
+          Shorts
+        </li>
+        <li class="sidebar-link">
+          <img src="Icons/subscriptions.svg" alt="">
+          Subscription
+        </li>
+        <li class="sidebar-link">
+          <img src="Icons/library.svg" alt="">
+          Library
+        </li>
+      </ul>
     </nav>
 
     <main>
@@ -624,5 +654,23 @@
         </div>
       </section>
     </main>
+
+    <script>
+      const sidebar = document.querySelector('.js-sidebar');
+      const fullSidebar = document.querySelector('.fullSidebar');
+      sidebar.addEventListener(
+        'click', 
+        () => {
+          fullSidebar.style.display = 'flex';
+        }
+      )
+
+      fullSidebar.addEventListener(
+        'click',
+        () => {
+          fullSidebar.style.display = 'none';
+        }
+      )
+    </script>
   </body>
 </html>
